@@ -12,8 +12,7 @@ namespace UnitTest1_arrayApplications
 	{
 	public:
 		
-		TEST_METHOD(check_sum)
-		{
+		TEST_METHOD(check_sum){
 			Assert::AreEqual(test_sum(2.0, 3.0), 5.0);
 		}
 
