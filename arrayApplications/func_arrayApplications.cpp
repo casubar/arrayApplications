@@ -95,11 +95,9 @@ void sort_insert(int list[], int listSize) {
 	// traverse the list
 	// variable firstOutOfOrder to point to the first element in the unsorted sublist
 	// firstOutOfOrder is initialized to 1
-	for (int firstOutOfOrder = 1; firstOutOfOrder < listSize; firstOutOfOrder++) {
-		
+	for (int firstOutOfOrder = 1; firstOutOfOrder < listSize; firstOutOfOrder++) {		
 		// look for the smallest element
-		if (list[firstOutOfOrder] < list[firstOutOfOrder - 1]) {
-			
+		if (list[firstOutOfOrder] < list[firstOutOfOrder - 1]) {			
 			// copy list[firstOutOfOrder] into temp
 			temp = list[firstOutOfOrder];
 			// record location of the firstOutOfOrder
@@ -119,7 +117,6 @@ void sort_insert(int list[], int listSize) {
 			// copy temp into list[location]
 			list[location] = temp;
 		}
-
 	}
 }
 

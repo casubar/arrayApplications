@@ -58,7 +58,7 @@ int main()
 			break;
 		}
 		std::cout << std::endl << std::endl << std::endl;
-		std::cout << "Continue <y/n> ==>  ";
+		std::cout << "C-O-N-T-I-N-U-E  <y/n> ==>  ";
 		std::cin >> cont;
 	} while (cont == 'Y' || cont == 'y');
 
