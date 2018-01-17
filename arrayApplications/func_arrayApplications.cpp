@@ -89,11 +89,9 @@ double check_selection_sort(int list[], int listSize) {
 void sort_insert(int list[], int listSize) {
 	int temp, location;
 
-
 	temp = 0;
 	location = 0;
 
-	
 	// traverse the list
 	// variable firstOutOfOrder to point to the first element in the unsorted sublist
 	// firstOutOfOrder is initialized to 1
@@ -107,10 +105,6 @@ void sort_insert(int list[], int listSize) {
 			// record location of the firstOutOfOrder
 			location = firstOutOfOrder;
 
-			std::cout << std::endl <<std::endl;
-			std::cout << "ongoing iteration is " << firstOutOfOrder << std::endl;
-			std::cout << "element at index " << firstOutOfOrder << " is stored at temp = " << temp << std::endl;
-
 			// move the lowest element to its proper location
 			// swap elements of the small element and the big element
 			do {
@@ -119,13 +113,6 @@ void sort_insert(int list[], int listSize) {
 				// b.decrement location by 1 to consider the next element in the sorted portion of the array
 				location--;
 
-				// printing 
-				std::cout << std::endl;
-				std::cout << "printing....swap small and big at index " << location << " and " << location + 1 << std::endl;
-				for (int i = 0; i < listSize; i++) {
-					std::cout << list[i] << " ";
-				}
-
 				/*while location > 0 && the element in the upper list at
 				location - 1 is greater than temp*/
 			} while (location > 00 && list[location - 1] > temp);		
@@ -133,11 +120,6 @@ void sort_insert(int list[], int listSize) {
 			list[location] = temp;
 		}
 
-		std::cout << std::endl << std::endl;
-		std::cout << "printing....List after iteration " << firstOutOfOrder << std::endl;
-		for (int i = 0; i < listSize; i++) {
-			std::cout << list[i] << " ";
-		}
 	}
 }
 
