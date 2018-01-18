@@ -1,9 +1,10 @@
 #include "stdafx.h"
 #include <iostream>
 
-double test_sum (int a, int b) {
-	return a + b;
-}
+
+const int ROW_SIZE = 5;
+const int COL_SIZE = 3;
+
 
 
 // display list
@@ -132,5 +133,96 @@ double check_insertion_sort(int list[], int listSize) {
 	}
 	else {
 		return 99;
+	}
+}
+
+
+// ********** S E A R C H I N G ****************
+// ------ SEQUENTIAL / LINEAR SEARCH
+// to apply search, the list must be sorted
+int seqSearch(const int myList[][COL_SIZE], int numOfRows, int numToSearch, int colToSearch) {
+	bool found;
+	int loc;
+
+	found = false;
+	loc = 0;
+	while (loc < numOfRows && !found) {
+		if (myList[loc][colToSearch] == numToSearch) {
+			found = true;
+		}
+		else {
+			loc++;
+		}
+	}
+	if (found) {
+		return loc;
+	}
+	else {
+		return -1;
+	}
+}
+
+
+// ------ BINARY SEARCH
+/*binary search is much faster than a sequential search....to apply a binary
+search, the list must be sorted.*/
+
+int search_binary(const int list[], int listsize, int searchItem) {
+	int first, last, mid;
+	bool found;
+
+	found = false;
+	first = 0;
+	mid = 0;
+	last = listsize - 1;
+
+	while (first <=last && !found) {
+		mid = (first + last) / 2;
+		if (list[mid] == searchItem) {
+			found = true;
+		}
+		else if (list[mid] > searchItem) {
+			last = mid - 1;
+		}
+		else {
+			first = mid + 1;
+		}
+	}
+	if (found) {
+		return mid;
+	}
+	else {
+		return 99;
+	}
+}
+
+// check binary search
+double check_search_binary(int list[], int searchItem, int listSize) {
+	int itemLoc;
+	
+	// sort list
+	sort_insert(list, listSize);
+	// execute binary search
+	itemLoc = search_binary(list, listSize, searchItem);
+	return itemLoc;
+}
+
+// execute search
+void execute_search(int list[], int listSize) {
+	int searchNum, numLoc;
+
+	sort_insert(list, listSize);
+	std::cout << "Enter number to search: ";
+	std::cin >> searchNum;
+	numLoc = search_binary(list, listSize, searchNum);
+	std::cout << "The sorted list:" << std::endl;
+	disp_list(list, listSize);
+	std::cout << std::endl;
+	if (numLoc == 99) {
+		std::cout << "Number not found!!!";
+		std::cout << std::endl;
+	}
+	else {
+		std::cout << "The number is located at index " << numLoc + 1 << std::endl;
 	}
 }

@@ -27,6 +27,7 @@ int main()
 		std::cout << "[1] Bubble Sort" << std::endl;
 		std::cout << "[2] Selection Sort" << std::endl;
 		std::cout << "[3] Insertion Sort" << std::endl;
+		std::cout << "[4] Search from the list" << std::endl;
 		std::cout << "[0] E X I T" << std::endl;
 		std::cout << "Enter your choice: ";
 		std::cin >> choyz;
@@ -51,6 +52,10 @@ int main()
 			disp_list(main_list, SIZE);
 			break;
 		}
+		case 4: {
+			execute_search(main_list, SIZE);
+			break;
+		}
 		case 0: {
 			return 0;
 		}
@@ -63,9 +68,5 @@ int main()
 	} while (cont == 'Y' || cont == 'y');
 
 
-
-
-	
-	
 }
 

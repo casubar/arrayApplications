@@ -1,5 +1,7 @@
 #pragma once
 
+const int ROW_SIZE = 5;
+const int COL_SIZE = 3;
 
 
 
@@ -23,3 +25,14 @@ double check_selection_sort(int list[], int listSize);
 void sort_insert(int list[], int listSize);
 // check insertion sort
 double check_insertion_sort(int list[], int listSize);
+
+
+// ********** S E A R C H I N G ****************
+// ------ SEQUENTIAL / LINEAR SEARCH
+int seqSearch(const int myList[][COL_SIZE], int numOfRows, int numToSearch, int colToSearch);
+// ------ BINARY SEARCH
+int search_binary(const int list[], int listsize, int searchItem);
+// check binary search
+double check_search_binary(int list[], int searchItem, int listSize);
+// execute search
+void execute_search(int list[], int listSize);
