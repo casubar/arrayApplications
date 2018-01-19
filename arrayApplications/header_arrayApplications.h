@@ -1,4 +1,5 @@
 #pragma once
+#include<vector>
 
 const int ROW_SIZE = 5;
 const int COL_SIZE = 3;
@@ -36,3 +37,12 @@ int search_binary(const int list[], int listsize, int searchItem);
 double check_search_binary(int list[], int searchItem, int listSize);
 // execute search
 void execute_search(int list[], int listSize);
+
+
+// ********** V E C T O R   T Y P E****************
+// store elements to  an empty vector 
+double vector_empty_store_elements();
+// store elements to a non-empty vector 
+double vector_nonEmpty_store_elements();
+// display contents of the vector 
+void disp_vectList(std::vector <int> vectList);

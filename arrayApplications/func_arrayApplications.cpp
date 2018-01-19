@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include <iostream>
+#include <vector>
 
 
 const int ROW_SIZE = 5;
@@ -215,7 +216,8 @@ void execute_search(int list[], int listSize) {
 	std::cout << "Enter number to search: ";
 	std::cin >> searchNum;
 	numLoc = search_binary(list, listSize, searchNum);
-	std::cout << "The sorted list:" << std::endl;
+	// display sorted list
+	std::cout << "The sorted list:" << std::endl;	
 	disp_list(list, listSize);
 	std::cout << std::endl;
 	if (numLoc == 99) {
@@ -224,5 +226,50 @@ void execute_search(int list[], int listSize) {
 	}
 	else {
 		std::cout << "The number is located at index " << numLoc + 1 << std::endl;
+	}
+}
+
+
+// ********** V E C T O R   T Y P E ****************
+// store elements to an empty vector 
+double vector_empty_store_elements() {
+	std::vector <int> vectList; // vector object with empty size
+	for (unsigned int i = 3; i > vectList.size(); i--) {
+		vectList.push_back(1 + i);		
+	}
+
+	if (vectList[0] == 4) {
+		if (vectList[1] == 3) {
+			return 1;
+		}
+	}
+	else {
+		return 99;
+	}
+}
+
+// store elements to a non-empty vector 
+double vector_nonEmpty_store_elements() {
+	std::vector <int> vectList(3); // vector object with size 3
+
+	for (unsigned int i = 0; i < vectList.size(); i++) {
+		vectList[i] = i * 2;
+	}
+
+	if (vectList[0] == 0) {
+		if (vectList[1] == 2) {
+			return 1;
+		}
+	}
+	else {
+		return 99;
+	}
+}
+
+
+// display contents of the vector 
+void disp_vectList(std::vector <int> vectList) {
+	for (unsigned int i = 0; i < vectList.size(); i++) {
+		std::cout << vectList[i] << " ";
 	}
 }

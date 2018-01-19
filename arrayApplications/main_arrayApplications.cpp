@@ -15,8 +15,10 @@ int main()
 
 	double total;
 	char cont;
-	int choyz;
+	int choyz, checkVect;
 
+
+	// -----------------------
 	std::cout << "The List: " << std::endl;
 	disp_list(main_list, SIZE);
 	std::cout << std::endl << std::endl;
@@ -52,9 +54,12 @@ int main()
 			disp_list(main_list, SIZE);
 			break;
 		}
-		case 4: {
+		case 4: { // search item from the sorted list
 			execute_search(main_list, SIZE);
 			break;
+		}
+		case 5: { // display contents of the vector
+			
 		}
 		case 0: {
 			return 0;
