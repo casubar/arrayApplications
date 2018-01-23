@@ -267,6 +267,34 @@ double vector_nonEmpty_store_elements() {
 }
 
 
+// vector parameter pass by reference
+/*void foo(Bar& b) - pass by reference, you can modify the original Bar through b */
+void vect_store_passBy_reference(std::vector <int> &myVectList, int listSize) {
+	std::vector <int> local_vectList(listSize); // initialize vector with size = listSize
+	for (unsigned int i = 0; i < local_vectList.size(); i++) { // store value to local vector
+		local_vectList[i] = i * 2;
+	}
+	// modify orignal vector myVectList by moving contents of local_vectList to myVectList	
+	myVectList.resize(myVectList.size() + listSize);  // modify myVectList size
+	for (unsigned int i = 0; i < local_vectList.size(); i++) {
+		myVectList[i] = local_vectList[i];
+	}
+}
+  
+// vector parameter pass by value 
+/*void foo(Bar b) - pass by value, b is a copy or the original Bar */
+void vect_passBy_value(std::vector <int> vectList, int listSize) {
+	
+	// modify the contents of the original vector
+	for (unsigned int i = 0; i < vectList.size(); i++) {
+		vectList[i] = vectList[i] + 1;
+	}
+	// display contents of the modifed vector
+	for (unsigned int i = 0; i < vectList.size(); i++) {
+		std::cout << vectList[i] << " ";
+	}
+}
+
 // display contents of the vector 
 void disp_vectList(std::vector <int> vectList) {
 	for (unsigned int i = 0; i < vectList.size(); i++) {

@@ -30,6 +30,7 @@ int main()
 		std::cout << "[2] Selection Sort" << std::endl;
 		std::cout << "[3] Insertion Sort" << std::endl;
 		std::cout << "[4] Search from the list" << std::endl;
+		std::cout << "[5] Vector" << std::endl;
 		std::cout << "[0] E X I T" << std::endl;
 		std::cout << "Enter your choice: ";
 		std::cin >> choyz;
@@ -58,8 +59,19 @@ int main()
 			execute_search(main_list, SIZE);
 			break;
 		}
-		case 5: { // display contents of the vector
+		case 5: { // vector pass by reference and pass by value
+			std::vector <int> main_vectList;
+			std::cout << "--==Vector Contents==--" << std::endl;
 			
+			vect_store_passBy_reference(main_vectList, SIZE);//pass by reference
+			std::cout << "vector pass by reference" << std::endl;
+			disp_vectList(main_vectList);
+			
+			std::cout << std::endl;
+			std::cout << "vector pass by value" << std::endl;
+			vect_passBy_value(main_vectList, 5); // pass by value
+			
+			break;
 		}
 		case 0: {
 			return 0;

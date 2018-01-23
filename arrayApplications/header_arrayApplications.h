@@ -44,5 +44,13 @@ void execute_search(int list[], int listSize);
 double vector_empty_store_elements();
 // store elements to a non-empty vector 
 double vector_nonEmpty_store_elements();
+
+
+// vector parameter pass by reference
+void vect_store_passBy_reference(std::vector <int> &myVectList, int listSize);
+// vector parameter pass by value 
+void vect_passBy_value(std::vector <int> vectList, int listSize);
+
 // display contents of the vector 
 void disp_vectList(std::vector <int> vectList);
+
