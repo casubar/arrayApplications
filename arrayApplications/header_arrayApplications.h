@@ -54,3 +54,5 @@ void vect_passBy_value(std::vector <int> vectList, int listSize);
 // display contents of the vector 
 void disp_vectList(std::vector <int> vectList);
 
+// multi-dimensional vector
+void vect_multiD();

@@ -270,6 +270,7 @@ double vector_nonEmpty_store_elements() {
 // vector parameter pass by reference
 /*void foo(Bar& b) - pass by reference, you can modify the original Bar through b */
 void vect_store_passBy_reference(std::vector <int> &myVectList, int listSize) {
+	
 	std::vector <int> local_vectList(listSize); // initialize vector with size = listSize
 	for (unsigned int i = 0; i < local_vectList.size(); i++) { // store value to local vector
 		local_vectList[i] = i * 2;
@@ -300,4 +301,43 @@ void disp_vectList(std::vector <int> vectList) {
 	for (unsigned int i = 0; i < vectList.size(); i++) {
 		std::cout << vectList[i] << " ";
 	}
+}
+
+// multi-dimensional vector
+void vect_multiD() {
+
+	// create an empty vector i.e. the ROW part of the vector
+	// vector vectList is the ROW part of the vector
+	std::vector < std::vector<int> > vectList;
+	
+	for (int rowNum = 0; rowNum < 5; rowNum++) { // loop for number of ROWs i.e. COL push.back to ROW
+		std::vector<int> vect_col; // create an empty vect_col i.e. the COL part of the vector
+		
+		// add element (column) to vect_col 
+		for (int colNum = 0; colNum < 3; colNum++) {
+			vect_col.push_back(rowNum * colNum); 
+		}
+
+		// copy the contents of the column vector to the row vector
+		// add vect_col to the original vector i.e. the ROW part of the vector
+		vectList.push_back(vect_col); 
+		
+		// display contents on each iteration of rowNum
+		/*std::cout << std::endl;
+		for (int row = 0; row <= rowNum; row++) {
+			for (int col = 0; col < 3; col++) {
+				std::cout << vectList[row][col] <<"-";
+			}
+			std::cout << std::endl;
+		}*/
+		
+	}
+	std::cout << "--= 2D vector list =--" << std::endl;
+	for (int row = 0; row < 5; row++) {
+		for (int col = 0; col < 3; col++) {
+			std::cout << vectList[row][col] << "-";
+		}
+		std::cout << std::endl;
+	}
+	
 }

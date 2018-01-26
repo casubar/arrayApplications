@@ -70,6 +70,9 @@ int main()
 			std::cout << std::endl;
 			std::cout << "vector pass by value" << std::endl;
 			vect_passBy_value(main_vectList, 5); // pass by value
+
+			std::cout << std::endl;
+			vect_multiD();
 			
 			break;
 		}
